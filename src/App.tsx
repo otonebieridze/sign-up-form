@@ -5,7 +5,7 @@ function App() {
   const {
     register,
     handleSubmit,
-    watch,
+    setValue,
     formState: { errors },
   } = useForm<submitData>();
 
@@ -18,6 +18,10 @@ function App() {
 
   const onSubmit: SubmitHandler<submitData> = (data) => {
     console.log(data);
+    setValue("name", "");
+    setValue("surname", "");
+    setValue("email", "");
+    setValue("password", "");
   };
 
   return (
